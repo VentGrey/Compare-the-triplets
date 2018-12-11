@@ -28,6 +28,9 @@ if a[i] == b[i] -> Neither Alice nor Bob receive a point.
 use std::io;
 
 fn main() {
+    let mut a_points:i8;
+    let mut b_points:i8;
+
     let mut input = String::new();
     println!("Please input Alice's grades in the following format:");
     println!("<int> <int> <int>");
@@ -52,4 +55,7 @@ fn main() {
     let arr_bob: Vec<i8> = input.split(" ")
     .map(|x| x.parse().expect("This is not an integer >:V!"))
     .collect();
+
+    //Iterador para la comprobación de los 
+
 }
