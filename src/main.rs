@@ -28,5 +28,6 @@ if a[i] == b[i] -> Neither Alice nor Bob receive a point.
 use std::io;
 
 fn main() {
-
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Error de lectura");
 }
