@@ -57,7 +57,7 @@ fn main() {
 
     let mut a_points:i8 = 0;
     let mut b_points:i8 = 0;
-    //Iterador para la comprobación de los puntos 
+    //Iterator for points add-up
 
     for i in 0..3 {
         if arr_alice[i] > arr_bob[i] {
