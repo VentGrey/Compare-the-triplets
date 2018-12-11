@@ -43,6 +43,13 @@ fn main() {
     //entrada resulta ser errónea. ¿Debería considerar manejar errores
     //utilizando Result?
     let mut input2 = String::new();
+    println!("Please input Bob's grades in the following format:");
+    println!("<int> <int> <int>");
+    println!("Three integers from 1-100 separated by a space");
     io::stdin().read_line(&mut input2).expect("Input error");
-
+    
+    
+    let arr_bob: Vec<i8> = input.split(" ")
+    .map(|x| x.parse().expect("This is not an integer >:V!"))
+    .collect();
 }
