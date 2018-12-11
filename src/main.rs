@@ -29,5 +29,20 @@ use std::io;
 
 fn main() {
     let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("Error de lectura");
+    println!("Please input Alice's grades in the following format:");
+    println!("<int> <int> <int>");
+    println!("Three integers from 1-100 separated by a space");
+    io::stdin().read_line(&mut input).expect("Input error");
+
+    //Usar vectores porque #ArraysOnSteroids
+    let arr_alice: Vec<i8> = input.split(" ")
+    .map(|x| x.parse().expect("This is not an integer >:V!"))
+    .collect();
+
+    //El código de entrada de ambos vectores resultará en un panic si la
+    //entrada resulta ser errónea. ¿Debería considerar manejar errores
+    //utilizando Result?
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).expect("Input error");
+
 }
