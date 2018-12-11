@@ -28,8 +28,7 @@ if a[i] == b[i] -> Neither Alice nor Bob receive a point.
 use std::io;
 
 fn main() {
-    let mut a_points:i8;
-    let mut b_points:i8;
+   
 
     let mut input = String::new();
     println!("Please input Alice's grades in the following format:");
@@ -37,14 +36,14 @@ fn main() {
     println!("Three integers from 1-100 separated by a space");
     io::stdin().read_line(&mut input).expect("Input error");
 
-    //Usar vectores porque #ArraysOnSteroids
+    //Use vectors cuz #ArraysOnSteroids
     let arr_alice: Vec<i8> = input.split(" ")
     .map(|x| x.parse().expect("This is not an integer >:V!"))
     .collect();
 
-    //El código de entrada de ambos vectores resultará en un panic si la
-    //entrada resulta ser errónea. ¿Debería considerar manejar errores
-    //utilizando Result?
+    /* The input code in both cases panics! when our user inputs an invalid
+    data type, I still don't know if I should use a proper Result< >
+    option to handle recoverable errors */
     let mut input2 = String::new();
     println!("Please input Bob's grades in the following format:");
     println!("<int> <int> <int>");
@@ -56,6 +55,14 @@ fn main() {
     .map(|x| x.parse().expect("This is not an integer >:V!"))
     .collect();
 
-    //Iterador para la comprobación de los 
+    let mut a_points:i8 = 0;
+    let mut b_points:i8 = 0;
+    //Iterador para la comprobación de los puntos 
 
+    for i in 0..3 {
+        if arr_alice[i] > arr_bob[i] {
+            a_points + 1;
+        }
+        
+    } 
 }
