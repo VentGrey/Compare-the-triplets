@@ -28,7 +28,7 @@ if a[i] == b[i] -> Neither Alice nor Bob receive a point.
 use std::io;
 
 fn main() {
-   
+
 
     let mut input = String::new();
     println!("Please input Alice's grades in the following format:");
@@ -49,8 +49,8 @@ fn main() {
     println!("<int> <int> <int>");
     println!("Three integers from 1-100 separated by a space");
     io::stdin().read_line(&mut input2).expect("Input error");
-    
-    
+
+
     let arr_bob: Vec<i8> = input.split(" ")
     .map(|x| x.parse().expect("This is not an integer >:V!"))
     .collect();
@@ -61,8 +61,14 @@ fn main() {
 
     for i in 0..3 {
         if arr_alice[i] > arr_bob[i] {
-            a_points + 1;
+            a_points += 1;
+        } else if arr_alice[i] < arr_bob[i] {
+            b_points += 1;
+        } else if arr_alice[i] == arr_bob[i] {
+            a_points = a_points;
+            b_points = b_points
         }
-        
-    } 
+    }
+    println!("The results are the following: ");
+    println!("Alice: {} | Bob: {}", a_points, b_points);
 }
