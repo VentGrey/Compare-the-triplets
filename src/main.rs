@@ -35,7 +35,7 @@ fn main() {
     io::stdin().read_line(&mut input).expect("Input error");
 
     //Use vectors cuz #ArraysOnSteroids
-    let arr_alice: Vec<i8> = input
+    let arr_alice: Vec<i32> = input
         .split(" ")
         .map(|x| x.parse().expect("This is not an integer >:V!"))
         .collect();
@@ -49,13 +49,13 @@ fn main() {
     println!("Three integers from 1-100 separated by a space");
     io::stdin().read_line(&mut input2).expect("Input error");
 
-    let arr_bob: Vec<i8> = input
+    let arr_bob: Vec<i32> = input
         .split(" ")
         .map(|x| x.parse().expect("This is not an integer >:V!"))
         .collect();
 
-    let mut a_points: i8 = 0;
-    let mut b_points: i8 = 0;
+    let mut a_points: i32 = 0;
+    let mut b_points: i32 = 0;
     //Iterator for points add-up
 
     for i in 0..3 {
