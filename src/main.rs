@@ -28,8 +28,6 @@ if a[i] == b[i] -> Neither Alice nor Bob receive a point.
 use std::io;
 
 fn main() {
-
-
     let mut input = String::new();
     println!("Please input Alice's grades in the following format:");
     println!("<int> <int> <int>");
@@ -37,9 +35,10 @@ fn main() {
     io::stdin().read_line(&mut input).expect("Input error");
 
     //Use vectors cuz #ArraysOnSteroids
-    let arr_alice: Vec<i8> = input.split(" ")
-    .map(|x| x.parse().expect("This is not an integer >:V!"))
-    .collect();
+    let arr_alice: Vec<i8> = input
+        .split(" ")
+        .map(|x| x.parse().expect("This is not an integer >:V!"))
+        .collect();
 
     /* The input code in both cases panics! when our user inputs an invalid
     data type, I still don't know if I should use a proper Result< >
@@ -50,13 +49,13 @@ fn main() {
     println!("Three integers from 1-100 separated by a space");
     io::stdin().read_line(&mut input2).expect("Input error");
 
+    let arr_bob: Vec<i8> = input
+        .split(" ")
+        .map(|x| x.parse().expect("This is not an integer >:V!"))
+        .collect();
 
-    let arr_bob: Vec<i8> = input.split(" ")
-    .map(|x| x.parse().expect("This is not an integer >:V!"))
-    .collect();
-
-    let mut a_points:i8 = 0;
-    let mut b_points:i8 = 0;
+    let mut a_points: i8 = 0;
+    let mut b_points: i8 = 0;
     //Iterator for points add-up
 
     for i in 0..3 {
